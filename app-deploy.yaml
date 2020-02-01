@@ -55,6 +55,7 @@ metadata:
     image.opencontainers.org/title: frontend-4
     stack.appsody.dev/version: 0.2.6
   name: apigw
+  namespace: cloud-lab
 spec:
   applicationImage: dev.local/apigw
   createKnativeService: false
