@@ -65,4 +65,11 @@ spec:
     type: NodePort
   stack: nodejs
   version: 1.0.0
+  volumeMounts:
+  - name: config-volume
+    mountPath: /project/user-app/src/config
+  volumes:
+    - name: config-volume
+      configMap:
+        name: cloud-lab-cm
 status: {}
