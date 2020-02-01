@@ -12,7 +12,8 @@ function main () {
   const port = process.env.PORT || 3000;
   var cors=require('cors');
 
-app.use(cors({origin:true,credentials: true}));
+// app.use(cors({origin:true,credentials: true}));
+app.options('*', cors());
   app.use(bodyParser.urlencoded({ // Middleware
     extended: true
   }));
