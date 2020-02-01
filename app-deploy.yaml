@@ -54,9 +54,9 @@ metadata:
   labels:
     image.opencontainers.org/title: frontend-4
     stack.appsody.dev/version: 0.2.6
-  name: frontend-4
+  name: apigw
 spec:
-  applicationImage: dev.local/frontend-4
+  applicationImage: dev.local/apigw
   createKnativeService: false
   expose: true
   service:
