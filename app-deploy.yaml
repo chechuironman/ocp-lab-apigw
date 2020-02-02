@@ -67,7 +67,7 @@ spec:
   version: 1.0.0
   volumeMounts:
   - name: config-volume
-    mountPath: /project/user-app/src/config
+    mountPath: /project/user-app/config
   volumes:
     - name: config-volume
       configMap:
