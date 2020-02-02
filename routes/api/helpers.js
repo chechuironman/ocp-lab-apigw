@@ -16,6 +16,8 @@ module.exports = {
 
     },
     login: function(userData){
+        console.log(login_service);
+        console.log(userData);
         return new Promise((resolve, reject) => {
             // const url = login_service;
             axios.post(login_service, userData).then(response => resolve(response));
