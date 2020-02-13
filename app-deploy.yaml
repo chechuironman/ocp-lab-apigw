@@ -7,7 +7,7 @@ metadata:
     build-date: 2019-10-29T20:35:20.404230
     commit.image.appsody.dev/author: Chechu <chechu@Chechus-MacBook-Pro-2.local>
     commit.image.appsody.dev/committer: Chechu <chechu@Chechus-MacBook-Pro-2.local>
-    commit.image.appsody.dev/contextDir: /frontend.4
+    commit.image.appsody.dev/contextDir: /apigw
     commit.image.appsody.dev/date: Wed Jan 29 18:34:08 2020 +0100
     commit.image.appsody.dev/message: initial commit
     description: This image contains the Kabanero development stack for the Nodejs
@@ -52,7 +52,7 @@ metadata:
     version: 0.2.6
   creationTimestamp: null
   labels:
-    image.opencontainers.org/title: frontend-4
+    image.opencontainers.org/title: apigw
     stack.appsody.dev/version: 0.2.6
   name: apigw
   namespace: cloud-lab
