@@ -6,18 +6,21 @@ let middleware = require('./middleware');
 const users = require("./routes/api/users");
 const backend = require("./routes/api/backend");
 const management = require("./routes/api/management");
+const pino = require('pino');
+const expressPino = require('express-pino-logger');
 
+const logger = pino({ level: process.env.LOG_LEVEL || 'info' });
+const expressLogger = expressPino({ logger });
 function main () {
   let app = express(); 
   const port = process.env.PORT || 3000;
   var cors=require('cors');
 
-// app.use(cors({origin:true,credentials: true}));
   app.options('*', cors());
   app.use(bodyParser.urlencoded({ // Middleware
     extended: true
   }));
-
+  app.use(expressLogger);
   app.use(function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
@@ -30,7 +33,8 @@ function main () {
 
   
 //   app.get('/api/management/courses', middleware.checkToken, handlers.index);
-  app.listen(port, () => console.log(`Server is listening on port: ${port}`));
+  app.listen(port, () => logger.info('Server running on port %d for the API GATEWAY SERVICE', port));
+  // logger.info('Server running on port %d for the API GATEWAY SERVICE', PORT);
   console.log(`API GATEWAY SERVICE`)
 }
 
