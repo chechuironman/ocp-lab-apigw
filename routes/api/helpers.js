@@ -28,8 +28,10 @@ module.exports = {
         console.log(login_service);
         console.log(userData);
         return new Promise((resolve, reject) => {
-            // const url = login_service;
-            axios.post(login_service, userData).then(response => resolve(response));
+            axios.post(login_service, userData)
+            .then(response => resolve(response))
+            .catch(response=> {
+              resolve(response.response)})
           });          
     },
     create_user: function(userData){
@@ -78,11 +80,6 @@ module.exports = {
                   headers: {
                     'Content-Type': 'application/json'
                 }
-                //   transformRequest: [(data, headers) => {
-                //     // transform the data
-                
-                //     return data;
-                //   }]
               };
               let data = JSON.stringify({
                 courseName: course.body.courseName,
@@ -102,14 +99,17 @@ module.exports = {
             )
           });          
     },
-    registerUser: function(course){
-        console.log(course);
+    registerUser: function(User){
+        console.log(User);
         return new Promise((resolve, reject) => {
             // const url = list_course_management_service;
-            axios.post(register_user_service,course).then(response => resolve(response));
+            axios.post(register_user_service,User)
+            .then(response => resolve(response))
+            .catch(response=> {
+              resolve(response.response)});
           });          
     }
-
+    
    
 }
 // export const listCourses = () => dispatch => {
