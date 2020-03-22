@@ -1,8 +1,5 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-let jwt = require('jsonwebtoken');
-let config = require('./config/keys');
-let middleware = require('./middleware');
 const users = require("./routes/api/users");
 const backend = require("./routes/api/backend");
 const management = require("./routes/api/management");
@@ -34,8 +31,8 @@ function main () {
   
 //   app.get('/api/management/courses', middleware.checkToken, handlers.index);
   app.listen(port, () => logger.info('Server running on port %d for the API GATEWAY SERVICE', port));
-  // logger.info('Server running on port %d for the API GATEWAY SERVICE', PORT);
-  console.log(`API GATEWAY SERVICE`)
+  // logger.info('Server running on port %d for the API GATEWAY SERVICE', port);
+  // console.log(`API GATEWAY SERVICE`)
 }
 
 main();

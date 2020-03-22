@@ -13,10 +13,9 @@ let checkToken = (req, res, next) => {
     }   
   
   if (token) {
-    console.log(token);
+    // console.log(token);
     jwt.verify(token, config.secret, (err, decoded) => {
       if (err) {
-        console.log(err);
         return res.json({
           success: false,
           message: 'Token is not valid'
@@ -24,18 +23,12 @@ let checkToken = (req, res, next) => {
       } else {
         req.decoded = decoded;
         // if(req.decoded.name==="admin@chechu.com"){
-          console.log(req.decoded);
+          // return res.json({
+          //   success: true,
+          //   name: req.decoded.name,
+          //   id: req.decoded.id
+          // });
           next();
-        // } 
-        // else{
-        //   console.log(req.decoded);
-        //   return res.json({
-        //     success: false,
-        //     message: 'You are not Admin ... Go out!'
-        //   });
-        // }
-        
-        // next();
       }
     });
   } else {

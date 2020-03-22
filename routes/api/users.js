@@ -19,7 +19,7 @@ const login_service = require("../../config/keys").login_service;
 // @access Public
 router.post("/register", async (req, res) => {
   const response = await  helpers.registerUser(req.body);
-  console.log(response.data);
+  // console.log(response.data);
 res.send(response.data);
   });
 // @route POST api/users/login
@@ -28,15 +28,12 @@ res.send(response.data);
 router.post("/login", async (req, res,) =>{
 
   const response = await  helpers.login(req.body);
-    console.log(response.data);
   res.send(response.data);
 });
  
 
 router.get('/list_courses', middleware.checkToken, async function (req, res) {
-  // router.get('/list_courses',  async function (req, res) {  
   const response = await helpers.listCourses();
-  console.log(response.data);
   res.send(response.data);
     
   });
