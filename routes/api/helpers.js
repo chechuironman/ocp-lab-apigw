@@ -13,9 +13,11 @@ module.exports = {
           });
 
     },
-    listClustersManagement: function (){
+    listClustersManagement: function (token,name){
         return new Promise((resolve, reject) => {
-            axios.get(list_clusters_service).then(response => resolve(response));
+            axios.get(list_clusters_service,{  params: {
+              token: token,
+              name: name}}).then(response => resolve(response));
           });
 
     },
