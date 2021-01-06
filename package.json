@@ -13,7 +13,7 @@
     "directory": "incubator/nodejs/templates/simple"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
     "cls-hooked": "^4.2.2",
     "cors": "^2.8.5",
