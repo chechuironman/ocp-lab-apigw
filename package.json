@@ -18,7 +18,7 @@
     "cls-hooked": "^4.2.2",
     "cors": "^2.8.5",
     "cuid": "^2.1.8",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-pino-logger": "^4.0.0",
     "jsonwebtoken": "^8.5.1",
     "pino": "^5.16.0"
